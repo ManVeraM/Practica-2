@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -75,56 +76,56 @@ namespace PRACTICA2.Controllers
             return StatusCode(500, $"Error {ex.Message}");
         }
     }
-
+        [Authorize]
         [HttpPost("load-reserves")]
-    public IActionResult LoadEntities([FromBody] List<Reserved> reservationDataList)
-    {
-        try
+        public IActionResult LoadEntities([FromBody] List<Reserved> reservationDataList)
         {
-           
-            if (reservationDataList == null)
+            try
             {
-                return BadRequest("No data registered.");
-            }
-
             
-            foreach (var reservationData in reservationDataList)
-            {
-               
-                int userId = reservationData.UserId;
-                int bookId = reservationData.BookId;
-                DateTime reservedAt = reservationData.ReservedAt;
-
-       
-                var user = _context.Users.Find(userId);
-                var book = _context.Books.Find(bookId);
-
-                if (user != null && book != null)
+                if (reservationDataList == null)
                 {
-                    var newReservation = new Reserved
-                    {
-                        UserId = userId,
-                        BookId = bookId,
-                        ReservedAt = reservedAt
-                    };
-
-                  
-                    _context.Reserveds.Add(newReservation);
-                    _context.SaveChanges();
+                    return BadRequest("No data registered.");
                 }
+
+                
+                foreach (var reservationData in reservationDataList)
+                {
+                
+                    int userId = reservationData.UserId;
+                    int bookId = reservationData.BookId;
+                    DateTime reservedAt = reservationData.ReservedAt;
+
+        
+                    var user = _context.Users.Find(userId);
+                    var book = _context.Books.Find(bookId);
+
+                    if (user != null && book != null)
+                    {
+                        var newReservation = new Reserved
+                        {
+                            UserId = userId,
+                            BookId = bookId,
+                            ReservedAt = reservedAt
+                        };
+
+                    
+                        _context.Reserveds.Add(newReservation);
+                        _context.SaveChanges();
+                    }
+                }
+
+                
+                return Ok("Reservations acquired.");
             }
-
-            
-            return Ok("Reservations acquired.");
+            catch (Exception ex)
+            {
+                
+                return StatusCode(500, $"Error at load: {ex.Message}");
+            }
         }
-        catch (Exception ex)
-        {
-            
-            return StatusCode(500, $"Error at load: {ex.Message}");
-        }
-    }
 
-
+    [Authorize]
     [HttpPost("load-users")]
     public IActionResult LoadUsers([FromBody] List<User> userDataList)
     {
@@ -171,50 +172,50 @@ namespace PRACTICA2.Controllers
         }
     }
 
-
+    [Authorize]
     [HttpPost("load-books")]
-public IActionResult LoadBooks([FromBody] List<Book> bookDataList)
-{
-    try
+    public IActionResult LoadBooks([FromBody] List<Book> bookDataList)
     {
-       
-        if (bookDataList == null)
+        try
         {
-            return BadRequest("No data was registered.");
-        }
+        
+            if (bookDataList == null)
+            {
+                return BadRequest("No data was registered.");
+            }
 
-      
-        foreach (var bookData in bookDataList)
+        
+            foreach (var bookData in bookDataList)
+            {
+                
+                string? bookTitle = bookData.Title;
+
+                string? code = bookData.Code;
+
+                string? description = bookData.Description;
+
+        
+                var newBook = new Book
+                {
+                    Title = bookTitle,
+                    Description = description,
+                    Code = code
+            
+                };
+
+                _context.Books.Add(newBook);
+                _context.SaveChanges();
+            }
+
+            
+            return Ok("books acquired.");
+        }
+        catch (Exception ex)
         {
             
-            string? bookTitle = bookData.Title;
-
-            string? code = bookData.Code;
-
-            string? description = bookData.Description;
-
-      
-            var newBook = new Book
-            {
-                Title = bookTitle,
-                Description = description,
-                Code = code
-         
-            };
-
-            _context.Books.Add(newBook);
-            _context.SaveChanges();
+            return StatusCode(500, $"Error {ex.Message}");
         }
-
-        
-        return Ok("books acquired.");
     }
-    catch (Exception ex)
-    {
-        
-        return StatusCode(500, $"Error {ex.Message}");
-    }
-}
 
 
 
