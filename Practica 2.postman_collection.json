@@ -169,7 +169,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:7230/api/Reservation/load-book",
+					"raw": "https://localhost:7230/api/Reservation/load-books",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -178,7 +178,7 @@
 					"path": [
 						"api",
 						"Reservation",
-						"load-book"
+						"load-books"
 					]
 				}
 			},
