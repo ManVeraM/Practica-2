@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -76,7 +75,7 @@ namespace PRACTICA2.Controllers
             return StatusCode(500, $"Error {ex.Message}");
         }
     }
-        [Authorize]
+        
         [HttpPost("load-reserves")]
         public IActionResult LoadEntities([FromBody] List<Reserved> reservationDataList)
         {
@@ -125,7 +124,7 @@ namespace PRACTICA2.Controllers
             }
         }
 
-    [Authorize]
+  
     [HttpPost("load-users")]
     public IActionResult LoadUsers([FromBody] List<User> userDataList)
     {
@@ -172,7 +171,7 @@ namespace PRACTICA2.Controllers
         }
     }
 
-    [Authorize]
+    
     [HttpPost("load-books")]
     public IActionResult LoadBooks([FromBody] List<Book> bookDataList)
     {
