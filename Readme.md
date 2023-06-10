@@ -15,6 +15,6 @@ to load the data seeds into the project you must do it with the postman app, you
 "https://localhost:7230/api/Reservation/load-books" for book´s seed
 "https://localhost:7230/api/Reservation/load-reserves" for user´s seed
 
-this petition use a list input, so dont forget the [] at the start and the end
+this petition use a list input, so dont forget the ["" ] at the start and the end of the list
 
 
