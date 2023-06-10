@@ -629,3 +629,4 @@ C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\runtimes\w
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\runtimes\win-x86\native\SQLite.Interop.dll
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\Practica 2.postman_collection.json

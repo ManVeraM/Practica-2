@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "02cecab0-f48b-4dde-82ef-3e497f471194",
+		"name": "Practica 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26768677"
+	},
+	"item": [
+		{
+			"name": "Post Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"Id\": 1,\r\n        \"Name\": \"John Smith\",\r\n        \"Code\": \"001\",\r\n        \"Faculty\": \"Engineering\"\r\n    },\r\n    {\r\n        \"Id\": 2,\r\n        \"Name\": \"Jane Doe\",\r\n        \"Code\": \"002\",\r\n        \"Faculty\": \"Arts\"\r\n    },\r\n    {\r\n        \"Id\": 3,\r\n        \"Name\": \"Alex Wong\",\r\n        \"Code\": \"003\",\r\n        \"Faculty\": \"Science\"\r\n    },\r\n    {\r\n        \"Id\": 4,\r\n        \"Name\": \"Sarah Johnson\",\r\n        \"Code\": \"004\",\r\n        \"Faculty\": \"Business\"\r\n    },\r\n    {\r\n        \"Id\": 5,\r\n        \"Name\": \"Michael Brown\",\r\n        \"Code\": \"005\",\r\n        \"Faculty\": \"Social Sciences\"\r\n    },\r\n    {\r\n        \"Id\": 6,\r\n        \"Name\": \"Emily Wilson\",\r\n        \"Code\": \"006\",\r\n        \"Faculty\": \"Education\"\r\n    },\r\n    {\r\n        \"Id\": 7,\r\n        \"Name\": \"Daniel Lee\",\r\n        \"Code\": \"007\",\r\n        \"Faculty\": \"Medicine\"\r\n    },\r\n    {\r\n        \"Id\": 8,\r\n        \"Name\": \"Olivia Taylor\",\r\n        \"Code\": \"008\",\r\n        \"Faculty\": \"Law\"\r\n    },\r\n    {\r\n        \"Id\": 9,\r\n        \"Name\": \"William Martinez\",\r\n        \"Code\": \"009\",\r\n        \"Faculty\": \"Computer Science\"\r\n    },\r\n    {\r\n        \"Id\": 10,\r\n        \"Name\": \"Sophia Anderson\",\r\n        \"Code\": \"010\",\r\n        \"Faculty\": \"Psychology\"\r\n    },\r\n    {\r\n        \"Id\": 11,\r\n        \"Name\": \"Ethan Davis\",\r\n        \"Code\": \"011\",\r\n        \"Faculty\": \"Music\"\r\n    },\r\n    {\r\n        \"Id\": 12,\r\n        \"Name\": \"Ava Garcia\",\r\n        \"Code\": \"012\",\r\n        \"Faculty\": \"Fine Arts\"\r\n    },\r\n    {\r\n        \"Id\": 13,\r\n        \"Name\": \"Liam Wilson\",\r\n        \"Code\": \"013\",\r\n        \"Faculty\": \"Mathematics\"\r\n    },\r\n    {\r\n        \"Id\": 14,\r\n        \"Name\": \"Isabella Clark\",\r\n        \"Code\": \"014\",\r\n        \"Faculty\": \"Communications\"\r\n    },\r\n    {\r\n        \"Id\": 15,\r\n        \"Name\": \"Mason Anderson\",\r\n        \"Code\": \"015\",\r\n        \"Faculty\": \"Biology\"\r\n    },\r\n    {\r\n        \"Id\": 16,\r\n        \"Name\": \"Sophia Thompson\",\r\n        \"Code\": \"016\",\r\n        \"Faculty\": \"Chemistry\"\r\n    },\r\n    {\r\n        \"Id\": 17,\r\n        \"Name\": \"Henry Walker\",\r\n        \"Code\": \"017\",\r\n        \"Faculty\": \"Physics\"\r\n    },\r\n    {\r\n        \"Id\": 18,\r\n        \"Name\": \"Amelia Green\",\r\n        \"Code\": \"018\",\r\n        \"Faculty\": \"Environmental Science\"\r\n    },\r\n    {\r\n        \"Id\": 19,\r\n        \"Name\": \"James Turner\",\r\n        \"Code\": \"019\",\r\n        \"Faculty\": \"Sociology\"\r\n    },\r\n    {\r\n        \"Id\": 20,\r\n        \"Name\": \"Charlotte Wright\",\r\n        \"Code\": \"020\",\r\n        \"Faculty\": \"Political Science\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7230/api/Reservation/load-users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Reservation",
+						"load-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7230/api/Reservation/users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Reservation",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Books",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n      \"Id\": 1,\r\n      \"Title\": \"The Great Gatsby\",\r\n      \"Description\": \"A classic American novel by F. Scott Fitzgerald\",\r\n      \"Code\": \"1001\"\r\n    },\r\n    {\r\n      \"Id\": 2,\r\n      \"Title\": \"To Kill a Mockingbird\",\r\n      \"Description\": \"A novel by Harper Lee\",\r\n      \"Code\": \"1002\"\r\n    },\r\n    {\r\n      \"Id\": 3,\r\n      \"Title\": \"1984\",\r\n      \"Description\": \"A dystopian novel by George Orwell\",\r\n      \"Code\": \"1003\"\r\n    },\r\n    {\r\n      \"Id\": 4,\r\n      \"Title\": \"Pride and Prejudice\",\r\n      \"Description\": \"A novel by Jane Austen\",\r\n      \"Code\": \"1004\"\r\n    },\r\n    {\r\n      \"Id\": 5,\r\n      \"Title\": \"The Catcher in the Rye\",\r\n      \"Description\": \"A novel by J.D. Salinger\",\r\n      \"Code\": \"1005\"\r\n    },\r\n    {\r\n      \"Id\": 6,\r\n      \"Title\": \"Moby-Dick\",\r\n      \"Description\": \"A novel by Herman Melville\",\r\n      \"Code\": \"1006\"\r\n    },\r\n    {\r\n      \"Id\": 7,\r\n      \"Title\": \"The Lord of the Rings\",\r\n      \"Description\": \"A fantasy novel by J.R.R. Tolkien\",\r\n      \"Code\": \"1007\"\r\n    },\r\n    {\r\n      \"Id\": 8,\r\n      \"Title\": \"To the Lighthouse\",\r\n      \"Description\": \"A novel by Virginia Woolf\",\r\n      \"Code\": \"1008\"\r\n    },\r\n    {\r\n      \"Id\": 9,\r\n      \"Title\": \"Brave New World\",\r\n      \"Description\": \"A dystopian novel by Aldous Huxley\",\r\n      \"Code\": \"1009\"\r\n    },\r\n    {\r\n      \"Id\": 10,\r\n      \"Title\": \"The Odyssey\",\r\n      \"Description\": \"An epic poem by Homer\",\r\n      \"Code\": \"1010\"\r\n    },\r\n    {\r\n      \"Id\": 11,\r\n      \"Title\": \"Jane Eyre\",\r\n      \"Description\": \"A novel by Charlotte Bronte\",\r\n      \"Code\": \"1011\"\r\n    },\r\n    {\r\n      \"Id\": 12,\r\n      \"Title\": \"The Great Expectations\",\r\n      \"Description\": \"A novel by Charles Dickens\",\r\n      \"Code\": \"1012\"\r\n    },\r\n    {\r\n      \"Id\": 13,\r\n      \"Title\": \"The Hobbit\",\r\n      \"Description\": \"A fantasy novel by J.R.R. Tolkien\",\r\n      \"Code\": \"1013\"\r\n    },\r\n    {\r\n      \"Id\": 14,\r\n      \"Title\": \"Fahrenheit 451\",\r\n      \"Description\": \"A dystopian novel by Ray Bradbury\",\r\n      \"Code\": \"1014\"\r\n    },\r\n    {\r\n      \"Id\": 15,\r\n      \"Title\": \"The Scarlet Letter\",\r\n      \"Description\": \"A novel by Nathaniel Hawthorne\",\r\n      \"Code\": \"1015\"\r\n    },\r\n    {\r\n      \"Id\": 16,\r\n      \"Title\": \"One Hundred Years of Solitude\",\r\n      \"Description\": \"A novel by Gabriel Garcia Marquez\",\r\n      \"Code\": \"1016\"\r\n    },\r\n    {\r\n      \"Id\": 17,\r\n      \"Title\": \"The Picture of Dorian Gray\",\r\n      \"Description\": \"A novel by Oscar Wilde\",\r\n      \"Code\": \"1017\"\r\n    },\r\n    {\r\n      \"Id\": 18,\r\n      \"Title\": \"The Count of Monte Cristo\",\r\n      \"Description\": \"A novel by Alexandre Dumas\",\r\n      \"Code\": \"1018\"\r\n    },\r\n    {\r\n      \"Id\": 19,\r\n      \"Title\": \"Wuthering Heights\",\r\n      \"Description\": \"A novel by Emily Bronte\",\r\n      \"Code\": \"1019\"\r\n    },\r\n    {\r\n      \"Id\": 20,\r\n      \"Title\": \"Anna Karenina\",\r\n      \"Description\": \"A novel by Leo Tolstoy\",\r\n      \"Code\": \"1020\"\r\n    }\r\n  ]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7230/api/Reservation/load-book",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Reservation",
+						"load-book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7230/api/Reservation/books",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Reservation",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Reserves",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n      \"UserId\": 1,\r\n      \"BookId\": 2,\r\n      \"ReservedAt\": \"2023-01-05T09:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 2,\r\n      \"BookId\": 3,\r\n      \"ReservedAt\": \"2023-02-15T14:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 3,\r\n      \"BookId\": 1,\r\n      \"ReservedAt\": \"2023-03-20T11:15:00\"\r\n    },\r\n    {\r\n      \"UserId\": 4,\r\n      \"BookId\": 5,\r\n      \"ReservedAt\": \"2023-04-10T10:00:00\"\r\n    },\r\n    {\r\n      \"UserId\": 5,\r\n      \"BookId\": 4,\r\n      \"ReservedAt\": \"2023-05-02T16:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 6,\r\n      \"BookId\": 7,\r\n      \"ReservedAt\": \"2023-06-18T09:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 7,\r\n      \"BookId\": 6,\r\n      \"ReservedAt\": \"2023-07-25T14:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 8,\r\n      \"BookId\": 9,\r\n      \"ReservedAt\": \"2023-08-08T11:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 9,\r\n      \"BookId\": 8,\r\n      \"ReservedAt\": \"2023-09-14T15:20:00\"\r\n    },\r\n    {\r\n      \"UserId\": 10,\r\n      \"BookId\": 11,\r\n      \"ReservedAt\": \"2023-01-30T09:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 11,\r\n      \"BookId\": 10,\r\n      \"ReservedAt\": \"2023-02-12T12:15:00\"\r\n    },\r\n    {\r\n      \"UserId\": 12,\r\n      \"BookId\": 13,\r\n      \"ReservedAt\": \"2023-03-05T13:00:00\"\r\n    },\r\n    {\r\n      \"UserId\": 13,\r\n      \"BookId\": 12,\r\n      \"ReservedAt\": \"2023-04-20T15:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 14,\r\n      \"BookId\": 15,\r\n      \"ReservedAt\": \"2023-05-10T10:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 15,\r\n      \"BookId\": 14,\r\n      \"ReservedAt\": \"2023-06-22T12:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 16,\r\n      \"BookId\": 17,\r\n      \"ReservedAt\": \"2023-07-18T14:00:00\"\r\n    },\r\n    {\r\n      \"UserId\": 17,\r\n      \"BookId\": 16,\r\n      \"ReservedAt\": \"2023-08-30T16:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 18,\r\n      \"BookId\": 19,\r\n      \"ReservedAt\": \"2023-06-14T11:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 19,\r\n      \"BookId\": 18,\r\n      \"ReservedAt\": \"2023-07-08T13:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 20,\r\n      \"BookId\": 20,\r\n      \"ReservedAt\": \"2023-09-05T15:15:00\"\r\n    },\r\n    {\r\n      \"UserId\": 1,\r\n      \"BookId\": 20,\r\n      \"ReservedAt\": \"2023-09-06T15:15:00\"\r\n    },\r\n    {\r\n      \"UserId\": 12,\r\n      \"BookId\": 24,\r\n      \"ReservedAt\": \"2023-01-12T09:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 20,\r\n      \"BookId\": 3,\r\n      \"ReservedAt\": \"2023-01-15T14:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 13,\r\n      \"BookId\": 11,\r\n      \"ReservedAt\": \"2023-03-22T11:15:00\"\r\n    },\r\n    {\r\n      \"UserId\": 4,\r\n      \"BookId\": 7,\r\n      \"ReservedAt\": \"2023-01-10T10:00:00\"\r\n    },\r\n    {\r\n      \"UserId\": 1,\r\n      \"BookId\": 4,\r\n      \"ReservedAt\": \"2023-08-02T16:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 8,\r\n      \"BookId\": 7,\r\n      \"ReservedAt\": \"2023-06-11T09:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 7,\r\n      \"BookId\": 2,\r\n      \"ReservedAt\": \"2023-07-24T14:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 1,\r\n      \"BookId\": 9,\r\n      \"ReservedAt\": \"2023-08-11T11:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 2,\r\n      \"BookId\": 10,\r\n      \"ReservedAt\": \"2023-04-14T15:20:00\"\r\n    },\r\n    {\r\n      \"UserId\": 18,\r\n      \"BookId\": 2,\r\n      \"ReservedAt\": \"2023-03-30T09:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 1,\r\n      \"BookId\": 9,\r\n      \"ReservedAt\": \"2023-12-12T12:15:00\"\r\n    },\r\n    {\r\n      \"UserId\": 9,\r\n      \"BookId\": 11,\r\n      \"ReservedAt\": \"2023-03-15T13:00:00\"\r\n    },\r\n    {\r\n      \"UserId\": 3,\r\n      \"BookId\": 12,\r\n      \"ReservedAt\": \"2023-04-10T15:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 14,\r\n      \"BookId\": 15,\r\n      \"ReservedAt\": \"2023-01-10T10:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 15,\r\n      \"BookId\": 14,\r\n      \"ReservedAt\": \"2023-03-22T12:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 6,\r\n      \"BookId\": 1,\r\n      \"ReservedAt\": \"2023-02-18T14:00:00\"\r\n    },\r\n    {\r\n      \"UserId\": 2,\r\n      \"BookId\": 20,\r\n      \"ReservedAt\": \"2023-01-30T16:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 8,\r\n      \"BookId\": 5,\r\n      \"ReservedAt\": \"2023-06-11T11:30:00\"\r\n    },\r\n    {\r\n      \"UserId\": 6,\r\n      \"BookId\": 18,\r\n      \"ReservedAt\": \"2023-02-08T13:45:00\"\r\n    },\r\n    {\r\n      \"UserId\": 7,\r\n      \"BookId\": 20,\r\n      \"ReservedAt\": \"2023-09-01T15:15:00\"\r\n    },\r\n    {\r\n      \"UserId\": 1,\r\n      \"BookId\": 4,\r\n      \"ReservedAt\": \"2023-06-05T15:15:00\"\r\n    }\r\n  ]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7230/api/Reservation/load-reserves",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Reservation",
+						"load-reserves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Reserves",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7230/api/Reservation/reservations",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Reservation",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EndPoint 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7230/api/Reservation/user-reservation-stats",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Reservation",
+						"user-reservation-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7230/api/Reservation/book-reservation-stats",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Reservation",
+						"book-reservation-stats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
