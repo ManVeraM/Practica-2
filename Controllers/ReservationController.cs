@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PRACTICA2.Models;
 
-namespace TodoApi.Controllers
+namespace PRACTICA2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -22,7 +22,202 @@ namespace TodoApi.Controllers
         }
 
 
-        [HttpGet]
+    [HttpGet("books")]
+    public IActionResult GetAllBooks()
+    {
+        try
+        {
+            // Obtener todos los libros de la base de datos
+            var books = _context.Books.ToList();
+
+            // Devolver una respuesta exitosa con la lista de libros
+            return Ok(books);
+        }
+        catch (Exception ex)
+        {
+            // En caso de que ocurra una excepción, devolver un mensaje de error
+            return StatusCode(500, $"Error al obtener los libros: {ex.Message}");
+        }
+    }
+
+    [HttpGet("users")]
+    public IActionResult GetAllUsers()
+    {
+        try
+        {
+            
+            var users = _context.Users.ToList();
+
+            
+            return Ok(users);
+        }
+        catch (Exception ex)
+        {
+            
+            return StatusCode(500, $"Error {ex.Message}");
+        }
+    }
+
+    [HttpGet("reservations")]
+    public IActionResult GetAllReservations()
+    {
+        try
+        {
+            
+            var reservations = _context.Reserveds.ToList();
+
+            
+            return Ok(reservations);
+        }
+        catch (Exception ex)
+        {
+            
+            return StatusCode(500, $"Error {ex.Message}");
+        }
+    }
+
+        [HttpPost("load-reserves")]
+    public IActionResult LoadEntities([FromBody] List<Reserved> reservationDataList)
+    {
+        try
+        {
+           
+            if (reservationDataList == null)
+            {
+                return BadRequest("No data registered.");
+            }
+
+            
+            foreach (var reservationData in reservationDataList)
+            {
+               
+                int userId = reservationData.UserId;
+                int bookId = reservationData.BookId;
+                DateTime reservedAt = reservationData.ReservedAt;
+
+       
+                var user = _context.Users.Find(userId);
+                var book = _context.Books.Find(bookId);
+
+                if (user != null && book != null)
+                {
+                    var newReservation = new Reserved
+                    {
+                        UserId = userId,
+                        BookId = bookId,
+                        ReservedAt = reservedAt
+                    };
+
+                  
+                    _context.Reserveds.Add(newReservation);
+                    _context.SaveChanges();
+                }
+            }
+
+            
+            return Ok("Reservations acquired.");
+        }
+        catch (Exception ex)
+        {
+            
+            return StatusCode(500, $"Error at load: {ex.Message}");
+        }
+    }
+
+
+    [HttpPost("load-users")]
+    public IActionResult LoadUsers([FromBody] List<User> userDataList)
+    {
+        try
+        {
+            
+            if (userDataList == null)
+            {
+                return BadRequest("No data was registered.");
+            }
+
+        
+            foreach (var userData in userDataList)
+            {   
+                
+        
+                string? userName = userData.Name;
+
+                string? faculty = userData.Faculty;
+
+                string? code = userData.Code;
+            
+                var newUser = new User
+                {
+                    Name = userName,
+                    Faculty = faculty,
+                    Code = code
+                    
+                    
+                };
+
+                
+                _context.Users.Add(newUser);
+                _context.SaveChanges();
+            }
+
+            
+            return Ok("users acquired.");
+        }
+        catch (Exception ex)
+        {
+            
+            return StatusCode(500, $"Error: {ex.Message}");
+        }
+    }
+
+
+    [HttpPost("load-books")]
+public IActionResult LoadBooks([FromBody] List<Book> bookDataList)
+{
+    try
+    {
+       
+        if (bookDataList == null)
+        {
+            return BadRequest("No data was registered.");
+        }
+
+      
+        foreach (var bookData in bookDataList)
+        {
+            
+            string? bookTitle = bookData.Title;
+
+            string? code = bookData.Code;
+
+            string? description = bookData.Description;
+
+      
+            var newBook = new Book
+            {
+                Title = bookTitle,
+                Description = description,
+                Code = code
+         
+            };
+
+            _context.Books.Add(newBook);
+            _context.SaveChanges();
+        }
+
+        
+        return Ok("books acquired.");
+    }
+    catch (Exception ex)
+    {
+        
+        return StatusCode(500, $"Error {ex.Message}");
+    }
+}
+
+
+
 
         // GET: api/Reservation
         [HttpGet("{name}")]
@@ -35,158 +230,82 @@ namespace TodoApi.Controllers
 
             return await _context.Reserveds.ToListAsync();
         }
-
-
-
-        public async Task<ActionResult<IEnumerable<Reserved>>> GetReserveds()
-        {
-          if (_context.Reserveds == null)
-          {
-              return NotFound();
-          }
-            return await _context.Reserveds.ToListAsync();
-        }
-
-        // GET: api/Reservation/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Reserved>> GetReserved(DateTime id)
-        {
-          if (_context.Reserveds == null)
-          {
-              return NotFound();
-          }
-            var reserved = await _context.Reserveds.FindAsync(id);
-
-            if (reserved == null)
-            {
-                return NotFound();
-            }
-
-            return reserved;
-        }
-
-        // PUT: api/Reservation/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutReserved(DateTime id, Reserved reserved)
-        {
-            if (id != reserved.ReservedAt)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(reserved).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ReservedExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Reservation
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Reserved>> PostReserved(Reserved reserved)
-        {
-          if (_context.Reserveds == null)
-          {
-              return Problem("Entity set 'DataContext.Reserveds'  is null.");
-          }
-            _context.Reserveds.Add(reserved);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ReservedExists(reserved.ReservedAt))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetReserved", new { id = reserved.ReservedAt }, reserved);
-        }
-
-        // DELETE: api/Reservation/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteReserved(DateTime id)
-        {
-            if (_context.Reserveds == null)
-            {
-                return NotFound();
-            }
-            var reserved = await _context.Reserveds.FindAsync(id);
-            if (reserved == null)
-            {
-                return NotFound();
-            }
-
-            _context.Reserveds.Remove(reserved);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
         private bool ReservedExists(DateTime id)
         {
             return (_context.Reserveds?.Any(e => e.ReservedAt == id)).GetValueOrDefault();
         }
 
-
-
-
-        [HttpGet("last-reserved-date")]
-        public IActionResult GetLastReservedDate()
-        {
-            var lastReservedDate = _context.Reserveds
-                .OrderByDescending(r => r.ReservedAt)
-                .Select(r => r.ReservedAt)
-                .FirstOrDefault();
-
-            return Ok(lastReservedDate);
-        }
-
-        [HttpGet("books-reserved")]
-        public IActionResult GetBooksReservedThisMonth()
+        [HttpGet("user-reservation-stats")]
+        public IActionResult GetUserReservationStats()
         {
             DateTime currentDate = DateTime.Now;
-            var reservedBooks = _context.Reserveds
-                .Where(r => r.ReservedAt.Year == currentDate.Year && r.ReservedAt.Month == currentDate.Month)
-                .Join(_context.Books, r => r.BookId, b => b.Id, (r, b) => b)
+            var users = _context.Users.ToList();
+            var userStats = new List<object>();
+            foreach (var user in users){
+                int bookReservationCount = _context.Reserveds
+                .Count(r => r.UserId == user.Id && r.ReservedAt.Year == currentDate.Year && r.ReservedAt.Month == currentDate.Month);
+
+                var reservedBooks = _context.Reserveds
+                    .Where(r => r.UserId == user.Id && r.ReservedAt.Year == currentDate.Year && r.ReservedAt.Month == currentDate.Month)
+                    .Join(_context.Books, r => r.BookId, b => b.Id, (r, b) => b)
+                    .Distinct()
+                    .ToList();
+
+                var lastReservedDate = _context.Reserveds
+                    .Where(r=> r.UserId == user.Id)
+                    .OrderByDescending(r => r.ReservedAt)
+                    .Select(r => r.ReservedAt)
+                    .FirstOrDefault();
+
+                var userReservedstats = new
+                {
+                    UserName = user.Name,
+                    UserFaculty = user.Faculty,
+                    UserReservationCount = bookReservationCount,
+                    LastReservedDate = lastReservedDate,
+                    reservedBooks = reservedBooks
+                    
+                };
+                userStats.Add(userReservedstats);
+
+            }
+            return Ok(userStats);
+        }
+        
+        [HttpGet("book-reservation-stats")]
+        public IActionResult GetBooksReservationStats()
+       {
+        var books = _context.Books.ToList();
+        var bookStats = new List<object>();
+
+        foreach (var book in books)
+        {
+            var reservedByUsers = _context.Reserveds
+                .Where(r => r.BookId == book.Id)
+                .Join(_context.Users, r => r.UserId, u => u.Id, (r, u) => u)
+                .Distinct()
                 .ToList();
 
-            return Ok(reservedBooks);
+
+            var bookReservationStats = new
+            {
+                BookId = book.Id,
+                BookName = book.Title,
+                
+                ReservedByUsers = reservedByUsers,
+                
+            };
+
+            bookStats.Add(bookReservationStats);
         }
 
-        [HttpGet("book-count")]
-        public IActionResult GetBookReservationCount()
-        {
-            DateTime currentDate = DateTime.Now;
-            int count = _context.Reserveds
-                .Count(r => r.ReservedAt.Year == currentDate.Year && r.ReservedAt.Month == currentDate.Month);
-
-            return Ok(count);
-        }
+        return Ok(bookStats);
+}
 
 
+
+    
         
     }
+
 }

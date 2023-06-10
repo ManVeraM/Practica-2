@@ -9,8 +9,7 @@ var options = new DbContextOptionsBuilder<DataContext>()
     .UseSqlite("Data Source= proyecto.db")
     .Options;
 
-using var context = new DataContext(options);
-context.Database.EnsureCreated();
+
 
 builder.Services.AddDbContext<DataContext>(opt =>
     opt.UseSqlite("Data Source = proyecto.db"));

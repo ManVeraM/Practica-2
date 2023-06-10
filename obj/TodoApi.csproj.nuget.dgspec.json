@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\manve\\Prueba\\Practica 2\\TodoApi.csproj": {}
+    "C:\\Users\\manve\\OneDrive\\Documentos\\GitHub\\Practica-2\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\manve\\Prueba\\Practica 2\\TodoApi.csproj": {
+    "C:\\Users\\manve\\OneDrive\\Documentos\\GitHub\\Practica-2\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\manve\\Prueba\\Practica 2\\TodoApi.csproj",
+        "projectUniqueName": "C:\\Users\\manve\\OneDrive\\Documentos\\GitHub\\Practica-2\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Users\\manve\\Prueba\\Practica 2\\TodoApi.csproj",
+        "projectPath": "C:\\Users\\manve\\OneDrive\\Documentos\\GitHub\\Practica-2\\TodoApi.csproj",
         "packagesPath": "C:\\Users\\manve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\manve\\Prueba\\Practica 2\\obj\\",
+        "outputPath": "C:\\Users\\manve\\OneDrive\\Documentos\\GitHub\\Practica-2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manve\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,6 +69,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.117, )"
             }
           },
           "imports": [
