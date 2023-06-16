@@ -12,31 +12,30 @@ namespace TodoApi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Books",
+                name: "dishes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(type: "TEXT", nullable: true),
-                    Description = table.Column<string>(type: "TEXT", nullable: true),
-                    Code = table.Column<string>(type: "TEXT", nullable: true)
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Price = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Books", x => x.Id);
+                    table.PrimaryKey("PK_dishes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Reserveds",
+                name: "orders",
                 columns: table => new
                 {
-                    ReservedAt = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    OrderedAt = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UserId = table.Column<int>(type: "INTEGER", nullable: false),
-                    BookId = table.Column<int>(type: "INTEGER", nullable: false)
+                    DishId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Reserveds", x => x.ReservedAt);
+                    table.PrimaryKey("PK_orders", x => x.OrderedAt);
                 });
 
             migrationBuilder.CreateTable(
@@ -46,8 +45,7 @@ namespace TodoApi.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
-                    Code = table.Column<string>(type: "TEXT", nullable: true),
-                    Faculty = table.Column<string>(type: "TEXT", nullable: true)
+                    Rut = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -59,10 +57,10 @@ namespace TodoApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Books");
+                name: "dishes");
 
             migrationBuilder.DropTable(
-                name: "Reserveds");
+                name: "orders");
 
             migrationBuilder.DropTable(
                 name: "Users");

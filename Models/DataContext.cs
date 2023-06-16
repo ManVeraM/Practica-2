@@ -9,11 +9,11 @@ public class DataContext : DbContext
     {
     }
 
-    public DbSet<Book> Books{ get; set; } = null!;
+    public DbSet<Dish> dishes{ get; set; } = null!;
 
     public DbSet<User> Users { get; set; } = null!;
 
-    public DbSet<Reserved> Reserveds { get; set; } = null!;
+    public DbSet<Order> orders { get; set; } = null!;
 
 
 

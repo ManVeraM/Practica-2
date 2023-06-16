@@ -1,17 +1,18 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace PRACTICA2.Models;
-public class Reserved{
+public class Order{
 
 
     
 
     public int UserId {get; set;}
 
-    public int BookId {get; set;}
+    public int DishId {get; set;}
 
 
     [Key]
-    public DateTime ReservedAt{get;set;}
+    public DateTime OrderedAt{get;set;}
+
 
 }

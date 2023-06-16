@@ -1,0 +1,43 @@
+[
+    {
+        "name": "Patience Dibbert",
+        "rut": "Sed quae.",
+        "total_sum_last_month": 168,
+        "dishes": [
+            {
+                "id": 1,
+                "name": "Dagmar Runolfsson",
+                "price": "84",
+                "created_at": "2023-06-13T22:26:53.000000Z",
+                "updated_at": "2023-06-13T22:26:53.000000Z"
+            },
+            {
+                "id": 1,
+                "name": "Dagmar Runolfsson",
+                "price": "84",
+                "created_at": "2023-06-13T22:26:53.000000Z",
+                "updated_at": "2023-06-13T22:26:53.000000Z"
+            }
+        ]
+    },
+    {
+        "name": "Dr. Deja Larson PhD",
+        "rut": "Illum.",
+        "total_sum_last_month": 0,
+        "dishes": []
+    },
+    {
+        "name": "Dr. Orval Cassin",
+        "rut": "Omnis.",
+        "total_sum_last_month": 56,
+        "dishes": [
+            {
+                "id": 3,
+                "name": "Boris Simonis",
+                "price": "56",
+                "created_at": "2023-06-13T22:26:53.000000Z",
+                "updated_at": "2023-06-13T22:26:53.000000Z"
+            }
+        ]
+    }
+]

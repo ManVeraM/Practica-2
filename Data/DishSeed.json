@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "Name": "Hamburguesa con queso",
+    "Price": 999
+  },
+  {
+    "Id": 2,
+    "Name": "Pizza margarita",
+    "Price": 1299
+  },
+  {
+    "Id": 3,
+    "Name": "Ensalada César",
+    "Price": 899
+  },
+  {
+    "Id": 4,
+    "Name": "Pasta Alfredo",
+    "Price": 1099
+  },
+  {
+    "Id": 5,
+    "Name": "Sushi surtido",
+    "Price": 1599
+  },
+  {
+    "Id": 6,
+    "Name": "Pollo a la parrilla",
+    "Price": 1199
+  },
+  {
+    "Id": 7,
+    "Name": "Tacos de carnitas",
+    "Price": 949
+  },
+  {
+    "Id": 8,
+    "Name": "Sopa de tomate",
+    "Price": 699
+  },
+  {
+    "Id": 9,
+    "Name": "Burrito de pollo",
+    "Price": 899
+  },
+  {
+    "Id": 10,
+    "Name": "Salmón a la parrilla",
+    "Price": 1499
+  }
+]

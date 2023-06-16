@@ -17,40 +17,37 @@ namespace TodoApi.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
 
-            modelBuilder.Entity("PRACTICA2.Models.Book", b =>
+            modelBuilder.Entity("PRACTICA2.Models.Dish", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Code")
+                    b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Price")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.ToTable("dishes");
                 });
 
-            modelBuilder.Entity("PRACTICA2.Models.Reserved", b =>
+            modelBuilder.Entity("PRACTICA2.Models.Order", b =>
                 {
-                    b.Property<DateTime>("ReservedAt")
+                    b.Property<DateTime>("OrderedAt")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("BookId")
+                    b.Property<int>("DishId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ReservedAt");
+                    b.HasKey("OrderedAt");
 
-                    b.ToTable("Reserveds");
+                    b.ToTable("orders");
                 });
 
             modelBuilder.Entity("PRACTICA2.Models.User", b =>
@@ -59,13 +56,10 @@ namespace TodoApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Code")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Faculty")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Rut")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

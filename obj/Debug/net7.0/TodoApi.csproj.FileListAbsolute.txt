@@ -612,9 +612,6 @@ C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\obj\Debug\net7.0\refint\Tod
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\obj\Debug\net7.0\TodoApi.pdb
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\obj\Debug\net7.0\TodoApi.genruntimeconfig.cache
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\obj\Debug\net7.0\ref\TodoApi.dll
-C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\Models\BookSeed.json
-C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\Models\ReservedSeeds.json
-C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\Models\UsersSeed.json
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\EntityFramework.SqlServer.dll
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\EntityFramework.dll
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\System.Data.SQLite.dll
@@ -630,3 +627,8 @@ C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\runtimes\w
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\Practica 2.postman_collection.json
+C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\Data\UsersSeed.json
+C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\response_end_point1.json
+C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\response_end_point2.json
+C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\Data\DishSeed.json
+C:\Users\manve\OneDrive\Documentos\GitHub\Practica-2\bin\Debug\net7.0\Data\OrderSeeds.json

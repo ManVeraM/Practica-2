@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "08686738-1c85-4edf-9c02-33198aebfebf",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26768677"
+	},
+	"item": [
+		{
+			"name": "Endpoint 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7230/api/Order/user-order-stats",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Order",
+						"user-order-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7230/api/Order/dish-order-stats",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7230",
+					"path": [
+						"api",
+						"Order",
+						"dish-order-stats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

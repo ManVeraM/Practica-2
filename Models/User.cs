@@ -6,11 +6,7 @@ public class User{
 
     public string? Name{ get; set;}
 
-
-    public string? Code{ get; set;}
-
-
-    public string? Faculty{ get; set; }
+    public string? Rut{ get; set; }
 
 
     
