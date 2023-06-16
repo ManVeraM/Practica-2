@@ -11,9 +11,7 @@ The api will launch in port:7230
 
 
 to load the data seeds into the project you must do it with the postman app, you must copy all the data from the data seed in the model folder and use the post petition with the following directions: 
-"https://localhost:7230/api/Reservation/load-users" for user´s seed
-"https://localhost:7230/api/Reservation/load-books" for book´s seed
-"https://localhost:7230/api/Reservation/load-reserves" for user´s seed
+
 
 this petition use a list input, so dont forget the ["" ] at the start and the end of the list
 
